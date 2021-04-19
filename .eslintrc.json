@@ -1,3 +1,6 @@
 {
-  "extends": "airbnb-typescript-prettier"
+  "extends": "airbnb-typescript-prettier",
+  "rules": {
+    "consistent-return": "off"
+  }
 }

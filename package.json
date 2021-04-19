@@ -5,7 +5,7 @@
   "author": "Entreprenerd",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && yarn knex migrate:latest",
     "dev": "nodemon src/server.ts",
     "start": "node lib/server.js"
   },

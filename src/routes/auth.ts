@@ -2,11 +2,17 @@ import express from "express";
 import crypto from "crypto";
 
 import db from "../db";
+import passport from "../auth";
 
 const router = express.Router();
 
-router.post("/login", (req, res) => {
-  console.log("login");
+router.post("/login", passport.authenticate("local"), (req, res) => {
+  res.send(req.user);
+});
+
+router.post("/me", (req, res) => {
+  const { user } = req;
+  res.send(user);
 });
 
 router.post("/register", async (req, res) => {
